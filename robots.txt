@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://https://angel-aranda.github.io/portafolio/sitemap.xml

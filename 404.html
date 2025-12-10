@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Language" content="es" />
+    <link rel="icon" type="image/svg+xml" href="logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porfolio Personal</title>
+    <meta name="robots" content="index, follow" />
+  </head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0QH8Y6ZMJR"></script>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          palette: {
+            popup: { background: "#2e2e2e" },
+            button: { background: "#f1d600" }
+          },
+          theme: "classic",
+          position: "bottom",
+          content: {
+            message: "Este sitio usa cookies para análisis y mejorar la experiencia.",
+            dismiss: "Aceptar",
+            link: "Leer más",
+            href: "politica-de-cookies.html"
+          },
+          onStatusChange: function (status) {
+            if (status === "dismiss") {
+              var script = document.createElement("script");
+              script.src = "https://www.googletagmanager.com/gtag/js?id=G-0QH8Y6ZMJR";
+              script.async = true;
+              document.head.appendChild(script);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0QH8Y6ZMJR');
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
